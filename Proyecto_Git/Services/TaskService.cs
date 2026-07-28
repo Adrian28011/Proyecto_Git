@@ -9,7 +9,19 @@ namespace Proyecto_Git.Services
     {
         private List<TaskItem> _tasks = new List<TaskItem>();
         private int _nextId = 1;
+        public TaskItem CreateTask(string title, string description)
+        {
+            var task = new TaskItem
+            {
+                Id = _nextId++,
+                Title = title,
+                Description = description,
+                IsCompleted = false
+            };
 
+            _tasks.Add(task);
+            return task;
+        }
 
     }
 }
