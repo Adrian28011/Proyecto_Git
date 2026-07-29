@@ -15,3 +15,7 @@ foreach (var t in taskService.GetAllTasks())
 
 var tareaBuscada = taskService.GetTaskById(1);
 Console.WriteLine($"\nTarea encontrada por Id: {tareaBuscada}");
+
+taskService.UpdateTask(1, "Estudiar Git Flow", "Practicar flujo", true);
+var tareaActualizada = taskService.GetTaskById(1);
+Console.WriteLine($"\nTarea actualizada: {tareaActualizada}");
