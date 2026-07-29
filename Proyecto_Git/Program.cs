@@ -19,3 +19,11 @@ Console.WriteLine($"\nTarea encontrada por Id: {tareaBuscada}");
 taskService.UpdateTask(1, "Estudiar Git Flow", "Practicar flujo", true);
 var tareaActualizada = taskService.GetTaskById(1);
 Console.WriteLine($"\nTarea actualizada: {tareaActualizada}");
+
+taskService.DeleteTask(1);
+Console.WriteLine("\n--- Listado luego de eliminar ---");
+foreach (var t in taskService.GetAllTasks())
+{
+    Console.WriteLine(t);
+}
+Console.WriteLine("(vacío si se eliminó correctamente)");
