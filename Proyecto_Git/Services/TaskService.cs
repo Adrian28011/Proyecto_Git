@@ -31,6 +31,21 @@ namespace Proyecto_Git.Services
         {
             return _tasks.FirstOrDefault(t => t.Id == id);
         }
+        public bool UpdateTask(int id, string title, string description, bool isCompleted)
+        {
+            var task = _tasks.FirstOrDefault(t => t.Id == id);
+
+            if (task == null)
+            {
+                return false;
+            }
+
+            task.Title = title;
+            task.Description = description;
+            task.IsCompleted = isCompleted;
+
+            return true;
+        }
 
     }
 }
