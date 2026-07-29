@@ -22,6 +22,15 @@ namespace Proyecto_Git.Services
             _tasks.Add(task);
             return task;
         }
+        public List<TaskItem> GetAllTasks()
+        {
+            return _tasks;
+        }
+
+        public TaskItem? GetTaskById(int id)
+        {
+            return _tasks.FirstOrDefault(t => t.Id == id);
+        }
 
     }
 }
